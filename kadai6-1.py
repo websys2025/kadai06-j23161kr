@@ -19,7 +19,6 @@ params = {
 res = requests.get(API_URL, params=params)
 data = res.json()["GET_STATS_DATA"]["STATISTICAL_DATA"]
 
-# ① メタ情報を整形
 meta = data["CLASS_INF"]["CLASS_OBJ"]
 if isinstance(meta, dict):
     meta = [meta]
