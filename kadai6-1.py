@@ -35,12 +35,10 @@ for c in meta:
         mapping[ent["@code"]] = ent["@name"]
     if col_key in df.columns:
         df[col_key] = df[col_key].replace(mapping)
-
+        
 col_map = {"@unit": "単位", "$": "値"}
 for c in meta:
     col_map["@"+c["@id"]] = c["@name"]
 df.rename(columns=col_map, inplace=True)
 
 print(df)
-print(data["STATISTICAL_DATA"].keys())
-print(df.columns)
